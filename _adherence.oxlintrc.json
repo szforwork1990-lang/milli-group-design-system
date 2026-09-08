@@ -1,0 +1,693 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/decision-deck/**",
+              "components/layouts/**",
+              "components/slide-chrome/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Montserrat|Yekan Bakh VF|Yekan Bakh VF Black|B Yekan))/i]",
+        "message": "Font not provided by the design system. Available: Montserrat, Yekan Bakh VF, Yekan Bakh VF Black, B Yekan."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BulletList'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|size|color|style|key|ref|className|style|children)$/]",
+        "message": "<BulletList> doesn't accept that prop. Declared props: items, size, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChapterDots'] > JSXAttribute > JSXIdentifier[name!=/^(?:total|active|size|tone|style|key|ref|className|style|children)$/]",
+        "message": "<ChapterDots> doesn't accept that prop. Declared props: total, active, size, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChapterDots'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<ChapterDots> tone must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChapterOpener'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|title|abstract|contentsLabel|contents|dir|style|key|ref|className|style|children)$/]",
+        "message": "<ChapterOpener> doesn't accept that prop. Declared props: number, title, abstract, contentsLabel, contents, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChapterOpener'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<ChapterOpener> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:chips|dir|style|key|ref|className|style|children)$/]",
+        "message": "<ChipRow> doesn't accept that prop. Declared props: chips, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipRow'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<ChipRow> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ColumnHead'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|style|key|ref|className|style|children)$/]",
+        "message": "<ColumnHead> doesn't accept that prop. Declared props: children, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|eyebrow|dots|page|total|label|surface|ornament|dir|titleSize|titleInset|children|style|key|ref|className|style|children)$/]",
+        "message": "<ContentSlide> doesn't accept that prop. Declared props: title, eyebrow, dots, page, total, label, surface, ornament, dir, titleSize, titleInset, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentSlide'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:white|panel|wash|gold|black)$/]",
+        "message": "<ContentSlide> surface must be one of 'white' | 'panel' | 'wash' | 'gold' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<ContentSlide> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CoverSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|description|logoBase|dir|key|ref|className|style|children)$/]",
+        "message": "<CoverSlide> doesn't accept that prop. Declared props: title, description, logoBase, dir."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CoverSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:ltr|rtl)$/]",
+        "message": "<CoverSlide> dir must be one of 'ltr' | 'rtl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentsBand'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|range|items|note|key|ref|className|style|children)$/]",
+        "message": "<ContentsBand> doesn't accept that prop. Declared props: label, range, items, note."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckCover'] > JSXAttribute > JSXIdentifier[name!=/^(?:kicker|title|question|note|year|logo|dir|style|key|ref|className|style|children)$/]",
+        "message": "<DeckCover> doesn't accept that prop. Declared props: kicker, title, question, note, year, logo, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckCover'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<DeckCover> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckFooter'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|page|total|tone|dir|style|key|ref|className|style|children)$/]",
+        "message": "<DeckFooter> doesn't accept that prop. Declared props: label, page, total, tone, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckFooter'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|tint|gold|dark)$/]",
+        "message": "<DeckFooter> tone must be one of 'light' | 'tint' | 'gold' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckFooter'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<DeckFooter> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Diamond'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|fill|radius|children|labelStyle|style|key|ref|className|style|children)$/]",
+        "message": "<Diamond> doesn't accept that prop. Declared props: size, fill, radius, children, labelStyle, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DotScale'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|max|shape|size|tone|dir|style|key|ref|className|style|children)$/]",
+        "message": "<DotScale> doesn't accept that prop. Declared props: value, max, shape, size, tone, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DotScale'] > JSXAttribute[name.name='shape'] > Literal[value!=/^(?:bar|diamond)$/]",
+        "message": "<DotScale> shape must be one of 'bar' | 'diamond'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DotScale'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|muted)$/]",
+        "message": "<DotScale> tone must be one of 'light' | 'muted'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DotScale'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<DotScale> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='EndSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:text|logoBase|dir|key|ref|className|style|children)$/]",
+        "message": "<EndSlide> doesn't accept that prop. Declared props: text, logoBase, dir."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='EndSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:ltr|rtl)$/]",
+        "message": "<EndSlide> dir must be one of 'ltr' | 'rtl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FunnelStep'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|meta|value|width|flag|tone|key|ref|className|style|children)$/]",
+        "message": "<FunnelStep> doesn't accept that prop. Declared props: label, meta, value, width, flag, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FunnelStep'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:black|gold|grey)$/]",
+        "message": "<FunnelStep> tone must be one of 'black' | 'gold' | 'grey'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GradientSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|chapter|children|page|total|label|key|ref|className|style|children)$/]",
+        "message": "<GradientSlide> doesn't accept that prop. Declared props: title, chapter, children, page, total, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|height|width|base|style|alt|key|ref|className|style|children)$/]",
+        "message": "<Logo> doesn't accept that prop. Declared props: variant, height, width, base, style, alt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:lockup-white|lockup-black|lockup-light-white|lockup-light-black|mark-white|mark-black|wordmark-white|wordmark-black)$/]",
+        "message": "<Logo> variant must be one of 'lockup-white' | 'lockup-black' | 'lockup-light-white' | 'lockup-light-black' | 'mark-white' | 'mark-black' | 'wordmark-white' | 'wordmark-black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NumberedPoint'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|title|body|variant|tone|dir|style|key|ref|className|style|children)$/]",
+        "message": "<NumberedPoint> doesn't accept that prop. Declared props: number, title, body, variant, tone, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NumberedPoint'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:stacked|row)$/]",
+        "message": "<NumberedPoint> variant must be one of 'stacked' | 'row'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NumberedPoint'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<NumberedPoint> tone must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NumberedPoint'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<NumberedPoint> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RowBadge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|tone|style|key|ref|className|style|children)$/]",
+        "message": "<RowBadge> doesn't accept that prop. Declared props: children, size, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RowBadge'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg|xl|xxl)$/]",
+        "message": "<RowBadge> size must be one of 'sm' | 'md' | 'lg' | 'xl' | 'xxl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RowBadge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:gold|black|outline)$/]",
+        "message": "<RowBadge> tone must be one of 'gold' | 'black' | 'outline'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RowTableColumn'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|width|align|key|ref|className|style|children)$/]",
+        "message": "<RowTableColumn> doesn't accept that prop. Declared props: label, width, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RowTableColumn'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:right|left|center)$/]",
+        "message": "<RowTableColumn> align must be one of 'right' | 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:style|key|ref|className|style|children)$/]",
+        "message": "<SectionBar> doesn't accept that prop. Declared props: style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|number|label|surface|dir|key|ref|className|style|children)$/]",
+        "message": "<SectionSlide> doesn't accept that prop. Declared props: title, number, label, surface, dir."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionSlide'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:white|black)$/]",
+        "message": "<SectionSlide> surface must be one of 'white' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:ltr|rtl)$/]",
+        "message": "<SectionSlide> dir must be one of 'ltr' | 'rtl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideFooter'] > JSXAttribute > JSXIdentifier[name!=/^(?:page|total|label|onDark|style|key|ref|className|style|children)$/]",
+        "message": "<SlideFooter> doesn't accept that prop. Declared props: page, total, label, onDark, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideFrame'] > JSXAttribute > JSXIdentifier[name!=/^(?:surface|dir|children|style|key|ref|className|style|children)$/]",
+        "message": "<SlideFrame> doesn't accept that prop. Declared props: surface, dir, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideFrame'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:black|white|panel|wash)$/]",
+        "message": "<SlideFrame> surface must be one of 'black' | 'white' | 'panel' | 'wash'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideFrame'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:ltr|rtl)$/]",
+        "message": "<SlideFrame> dir must be one of 'ltr' | 'rtl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideTitle'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|align|color|style|key|ref|className|style|children)$/]",
+        "message": "<SlideTitle> doesn't accept that prop. Declared props: children, align, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideTitle'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center|right)$/]",
+        "message": "<SlideTitle> align must be one of 'left' | 'center' | 'right'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|caption|tone|size|dir|style|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: value, caption, tone, size, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:black|gold|outline)$/]",
+        "message": "<StatBlock> tone must be one of 'black' | 'gold' | 'outline'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<StatBlock> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Takeaway'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|accent|bleed|dir|style|key|ref|className|style|children)$/]",
+        "message": "<Takeaway> doesn't accept that prop. Declared props: children, tone, accent, bleed, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Takeaway'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:black|gold|grey|panel)$/]",
+        "message": "<Takeaway> tone must be one of 'black' | 'gold' | 'grey' | 'panel'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Takeaway'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<Takeaway> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ThanksSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|label|logo|dir|style|key|ref|className|style|children)$/]",
+        "message": "<ThanksSlide> doesn't accept that prop. Declared props: title, label, logo, dir, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ThanksSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:rtl|ltr)$/]",
+        "message": "<ThanksSlide> dir must be one of 'rtl' | 'ltr'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ThreeColumnSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|columns|page|total|label|surface|key|ref|className|style|children)$/]",
+        "message": "<ThreeColumnSlide> doesn't accept that prop. Declared props: title, columns, page, total, label, surface."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ThreeColumnSlide'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:white|panel)$/]",
+        "message": "<ThreeColumnSlide> surface must be one of 'white' | 'panel'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TocSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:heading|items|dir|key|ref|className|style|children)$/]",
+        "message": "<TocSlide> doesn't accept that prop. Declared props: heading, items, dir."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TocSlide'] > JSXAttribute[name.name='dir'] > Literal[value!=/^(?:ltr|rtl)$/]",
+        "message": "<TocSlide> dir must be one of 'ltr' | 'rtl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TwoColumnSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|columns|page|total|label|surface|key|ref|className|style|children)$/]",
+        "message": "<TwoColumnSlide> doesn't accept that prop. Declared props: title, columns, page, total, label, surface."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TwoColumnSlide'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:white|panel)$/]",
+        "message": "<TwoColumnSlide> surface must be one of 'white' | 'panel'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WatermarkSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|chapter|children|page|total|label|surface|key|ref|className|style|children)$/]",
+        "message": "<WatermarkSlide> doesn't accept that prop. Declared props: title, chapter, children, page, total, label, surface."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WatermarkSlide'] > JSXAttribute[name.name='surface'] > Literal[value!=/^(?:white|black|panel)$/]",
+        "message": "<WatermarkSlide> surface must be one of 'white' | 'black' | 'panel'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|style|key|ref|className|style|children)$/]",
+        "message": "<Wordmark> doesn't accept that prop. Declared props: size, color, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BulletList": {
+        "replaces": []
+      },
+      "ChapterDots": {
+        "replaces": []
+      },
+      "ChapterOpener": {
+        "replaces": []
+      },
+      "ChipRow": {
+        "replaces": []
+      },
+      "ColumnHead": {
+        "replaces": []
+      },
+      "ContentSlide": {
+        "replaces": []
+      },
+      "CoverSlide": {
+        "replaces": []
+      },
+      "ContentsBand": {
+        "replaces": []
+      },
+      "DeckCover": {
+        "replaces": []
+      },
+      "DeckFooter": {
+        "replaces": []
+      },
+      "Diamond": {
+        "replaces": []
+      },
+      "DotScale": {
+        "replaces": []
+      },
+      "EndSlide": {
+        "replaces": []
+      },
+      "FunnelStep": {
+        "replaces": []
+      },
+      "GradientSlide": {
+        "replaces": []
+      },
+      "Logo": {
+        "replaces": []
+      },
+      "NumberedPoint": {
+        "replaces": []
+      },
+      "RowBadge": {
+        "replaces": []
+      },
+      "RowTableColumn": {
+        "replaces": []
+      },
+      "SectionBar": {
+        "replaces": []
+      },
+      "SectionSlide": {
+        "replaces": []
+      },
+      "SlideFooter": {
+        "replaces": []
+      },
+      "SlideFrame": {
+        "replaces": []
+      },
+      "SlideTitle": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      },
+      "Takeaway": {
+        "replaces": []
+      },
+      "ThanksSlide": {
+        "replaces": []
+      },
+      "ThreeColumnSlide": {
+        "replaces": []
+      },
+      "TocSlide": {
+        "replaces": []
+      },
+      "TwoColumnSlide": {
+        "replaces": []
+      },
+      "WatermarkSlide": {
+        "replaces": []
+      },
+      "Wordmark": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--col2-gap",
+      "--col2-w",
+      "--col3-gap",
+      "--col3-w",
+      "--content-h",
+      "--content-y",
+      "--dm-col",
+      "--dm-content-w",
+      "--dm-gold-rule-w",
+      "--dm-gutter",
+      "--dm-margin",
+      "--dm-row-h",
+      "--dm-rule-top",
+      "--dot-size",
+      "--dur-base",
+      "--dur-fast",
+      "--ease-standard",
+      "--font-en",
+      "--font-fa",
+      "--font-fa-body",
+      "--font-fa-head",
+      "--footer-pad-x",
+      "--footer-y",
+      "--fs-body",
+      "--fs-body-lg",
+      "--fs-chapter",
+      "--fs-column-head",
+      "--fs-cover-sub",
+      "--fs-cover-title",
+      "--fs-dm-body",
+      "--fs-dm-body-sm",
+      "--fs-dm-caption",
+      "--fs-dm-chapter",
+      "--fs-dm-chapter-num",
+      "--fs-dm-cover",
+      "--fs-dm-cover-sub",
+      "--fs-dm-label",
+      "--fs-dm-label-sm",
+      "--fs-dm-lead",
+      "--fs-dm-lede",
+      "--fs-dm-page",
+      "--fs-dm-strong",
+      "--fs-dm-title",
+      "--fs-dm-title-sm",
+      "--fs-dm-title-xl",
+      "--fs-dm-toc-item",
+      "--fs-dm-toc-num",
+      "--fs-eyebrow",
+      "--fs-footer",
+      "--fs-section-num",
+      "--fs-section-title",
+      "--fs-section-title-fa",
+      "--fs-slide-title",
+      "--fs-thanks",
+      "--fs-toc-heading",
+      "--fs-toc-number",
+      "--fs-wordmark",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-extrabold",
+      "--fw-extralight",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--fw-thin",
+      "--gradient-mango-dot",
+      "--gradient-mango-wash",
+      "--hairline",
+      "--lh-body",
+      "--lh-dm-body",
+      "--lh-dm-title",
+      "--lh-tight",
+      "--milli-alert",
+      "--milli-black",
+      "--milli-blue",
+      "--milli-gray-56",
+      "--milli-gray-panel",
+      "--milli-ink-54",
+      "--milli-ink-58",
+      "--milli-ink-70",
+      "--milli-ink-75",
+      "--milli-ink-80",
+      "--milli-link",
+      "--milli-link-visited",
+      "--milli-mango",
+      "--milli-mango-dark",
+      "--milli-mango-guide",
+      "--milli-mango-light",
+      "--milli-mango-wash-solid",
+      "--milli-navy",
+      "--milli-navy-ink",
+      "--milli-panel-83",
+      "--milli-panel-96",
+      "--milli-panel-97",
+      "--milli-slate",
+      "--milli-success",
+      "--milli-white",
+      "--radius-bar",
+      "--radius-none",
+      "--radius-pill",
+      "--rule-on-dark",
+      "--rule-on-light",
+      "--section-bar-h",
+      "--section-bar-w",
+      "--shadow-none",
+      "--slide-h",
+      "--slide-pad-x",
+      "--slide-pad-x-wide",
+      "--slide-w",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--surface-dark",
+      "--surface-light",
+      "--surface-panel",
+      "--text-accent",
+      "--text-muted",
+      "--text-on-dark",
+      "--text-primary",
+      "--title-h",
+      "--title-y",
+      "--tracking-cover",
+      "--tracking-tight"
+    ],
+    "tokenKinds": {
+      "--milli-black": "color",
+      "--milli-white": "color",
+      "--milli-mango": "color",
+      "--milli-mango-guide": "color",
+      "--milli-mango-dark": "color",
+      "--milli-mango-light": "color",
+      "--milli-blue": "color",
+      "--milli-navy": "color",
+      "--milli-navy-ink": "color",
+      "--milli-ink-75": "color",
+      "--milli-gray-panel": "color",
+      "--milli-slate": "color",
+      "--milli-success": "color",
+      "--milli-alert": "color",
+      "--milli-link": "color",
+      "--milli-link-visited": "color",
+      "--surface-dark": "color",
+      "--surface-light": "color",
+      "--surface-panel": "color",
+      "--text-primary": "font",
+      "--text-on-dark": "font",
+      "--text-muted": "font",
+      "--text-accent": "font",
+      "--accent": "color",
+      "--rule-on-dark": "color",
+      "--rule-on-light": "color",
+      "--gradient-mango-dot": "color",
+      "--gradient-mango-wash": "color",
+      "--font-en": "font",
+      "--font-fa": "font",
+      "--fw-thin": "font",
+      "--fw-extralight": "font",
+      "--fw-light": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-extrabold": "font",
+      "--fw-black": "font",
+      "--fs-cover-title": "spacing",
+      "--fs-cover-sub": "spacing",
+      "--fs-section-title": "spacing",
+      "--fs-section-title-fa": "spacing",
+      "--fs-slide-title": "spacing",
+      "--fs-toc-heading": "spacing",
+      "--fs-toc-number": "spacing",
+      "--fs-thanks": "spacing",
+      "--fs-column-head": "spacing",
+      "--fs-body": "spacing",
+      "--fs-body-lg": "spacing",
+      "--fs-chapter": "spacing",
+      "--fs-wordmark": "spacing",
+      "--fs-footer": "spacing",
+      "--fs-eyebrow": "spacing",
+      "--fs-section-num": "spacing",
+      "--lh-tight": "font",
+      "--lh-body": "font",
+      "--tracking-cover": "font",
+      "--tracking-tight": "font",
+      "--font-fa-head": "font",
+      "--font-fa-body": "font",
+      "--dm-margin": "spacing",
+      "--dm-content-w": "spacing",
+      "--dm-col": "spacing",
+      "--dm-gutter": "spacing",
+      "--dm-rule-top": "spacing",
+      "--dm-gold-rule-w": "spacing",
+      "--dm-row-h": "spacing",
+      "--milli-ink-80": "color",
+      "--milli-ink-70": "color",
+      "--milli-ink-58": "color",
+      "--milli-ink-54": "color",
+      "--milli-gray-56": "color",
+      "--milli-panel-96": "color",
+      "--milli-panel-97": "color",
+      "--milli-panel-83": "color",
+      "--milli-mango-wash-solid": "color",
+      "--fs-dm-cover": "spacing",
+      "--fs-dm-cover-sub": "spacing",
+      "--fs-dm-chapter": "spacing",
+      "--fs-dm-chapter-num": "spacing",
+      "--fs-dm-title-xl": "spacing",
+      "--fs-dm-title": "spacing",
+      "--fs-dm-title-sm": "spacing",
+      "--fs-dm-toc-num": "spacing",
+      "--fs-dm-toc-item": "spacing",
+      "--fs-dm-lead": "spacing",
+      "--fs-dm-lede": "spacing",
+      "--fs-dm-strong": "spacing",
+      "--fs-dm-body": "spacing",
+      "--fs-dm-body-sm": "spacing",
+      "--fs-dm-caption": "spacing",
+      "--fs-dm-label": "spacing",
+      "--fs-dm-label-sm": "spacing",
+      "--fs-dm-page": "spacing",
+      "--lh-dm-title": "font",
+      "--lh-dm-body": "font",
+      "--slide-w": "spacing",
+      "--slide-h": "spacing",
+      "--slide-pad-x": "spacing",
+      "--slide-pad-x-wide": "spacing",
+      "--title-y": "spacing",
+      "--title-h": "spacing",
+      "--content-y": "spacing",
+      "--content-h": "spacing",
+      "--footer-y": "spacing",
+      "--footer-pad-x": "spacing",
+      "--col2-w": "spacing",
+      "--col2-gap": "spacing",
+      "--col3-w": "spacing",
+      "--col3-gap": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--radius-none": "radius",
+      "--radius-bar": "radius",
+      "--radius-pill": "radius",
+      "--shadow-none": "shadow",
+      "--dot-size": "spacing",
+      "--section-bar-w": "spacing",
+      "--section-bar-h": "spacing",
+      "--hairline": "spacing",
+      "--ease-standard": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other"
+    },
+    "fontFamilies": [
+      "B Yekan",
+      "Montserrat",
+      "Yekan Bakh VF",
+      "Yekan Bakh VF Black"
+    ]
+  }
+}

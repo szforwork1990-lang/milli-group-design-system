@@ -1,0 +1,37 @@
+:root{
+  --font-en:'Montserrat',system-ui,'Helvetica Neue',Arial,sans-serif;
+  --font-fa:'Yekan Bakh VF',Tahoma,sans-serif;
+
+  --fw-thin:100; /* @kind font */
+  --fw-extralight:200; /* @kind font */
+  --fw-light:300; /* @kind font */
+  --fw-regular:400; /* @kind font */
+  --fw-medium:500; /* @kind font */ /* "Montserrat Medium" - the master's default title weight */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --fw-extrabold:800; /* @kind font */
+  --fw-black:900; /* @kind font */
+
+  /* Slide type scale. Values are the .pptx point sizes converted at 4/3 for a 1280x720 canvas. */
+  --fs-cover-title:53.33px;   /* 40pt */
+  --fs-cover-sub:26.67px;     /* 20pt */
+  --fs-section-title:58.67px; /* 44pt */
+  --fs-section-title-fa:64px; /* 48pt */
+  --fs-slide-title:32px;      /* 24pt */
+  --fs-toc-heading:32px;      /* 24pt */
+  --fs-toc-number:48px;       /* 36pt */
+  --fs-thanks:42.67px;        /* 32pt */
+  --fs-column-head:17.33px;   /* 13pt */
+  --fs-body:16px;             /* 12pt — content placeholders */
+  --fs-body-lg:21.33px;       /* 16pt — the "subtitle" size the template calls out */
+  --fs-chapter:16px;          /* 12pt — chapter label, top right */
+  --fs-wordmark:14.67px;      /* 11pt */
+  --fs-footer:10.67px;        /* 8pt — page number */
+  --fs-eyebrow:13.33px;       /* 10pt — file-name footer strip */
+  --fs-section-num:24px;      /* 18pt */
+
+  --lh-tight:.9; /* @kind font */ /* master lnSpc 90%, titles and body alike */
+  --lh-body:1.45; /* @kind font */
+  --tracking-cover:-.0375em; /* @kind font */ /* spc -150 at 40pt */
+  --tracking-tight:-.01em; /* @kind font */
+}

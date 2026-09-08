@@ -1,0 +1,56 @@
+:root{
+  /* ── Decision-memo deck ──────────────────────────────────────────────
+     Measured from a real 41-slide Milli decision memo (1280x720 canvas).
+     Chapter order and content vary between decks; these are the constants
+     that do not. */
+
+  /* Font stacks — see readme.md / CLAUDE.md. PowerPoint resolves fonts by family
+     name, so headings must name the Black family explicitly. */
+  --font-fa-head:'Yekan Bakh VF Black','Yekan Bakh VF',sans-serif;
+  --font-fa-body:'B Yekan','Yekan Bakh VF',sans-serif;
+
+  /* Grid */
+  --dm-margin:64px;              /* left/right slide margin */
+  --dm-content-w:1152px;         /* 1280 - 2*64 */
+  --dm-col:370px;                /* one of three contents columns */
+  --dm-gutter:21px;
+  --dm-rule-top:158px;           /* the hairline that closes the slide header */
+  --dm-gold-rule-w:430px;        /* gold segment riding the header hairline */
+  --dm-row-h:79px;               /* striped table row */
+
+  /* Neutrals used as ink, in order of weight */
+  --milli-ink-80:#333333;        /* secondary body copy on white */
+  --milli-ink-70:#4A4A4A;        /* footer on tinted surfaces */
+  --milli-ink-58:#6B6B6B;        /* eyebrow, table column labels */
+  --milli-ink-54:#8A8A8A;        /* de-emphasised / rejected options */
+  --milli-gray-56:#6E6E6E;       /* mid band in the concentric corner ornament */
+
+  /* Surface tints */
+  --milli-panel-96:#F4F4F4;      /* header panel behind a recommendation */
+  --milli-panel-97:#F6F6F6;      /* even table stripe */
+  --milli-panel-83:#D3D2D0;      /* full-width takeaway band, warm grey */
+  --milli-mango-wash-solid:#FDEFC8; /* flat mango tint slide background */
+
+  /* Deck type scale — the .pptx point sizes at 4/3 for a 1280x720 canvas */
+  --fs-dm-cover:64px;            /* 48pt  cover title */
+  --fs-dm-cover-sub:24px;        /* 18pt  cover question */
+  --fs-dm-chapter:56px;          /* 42pt  chapter opener title */
+  --fs-dm-chapter-num:22px;      /* 16.5pt chapter numeral */
+  --fs-dm-title-xl:34px;         /* 25.5pt one-line headline */
+  --fs-dm-title:32px;            /* 24pt  standard slide headline */
+  --fs-dm-title-sm:26px;         /* 19.5pt long headline, three lines */
+  --fs-dm-toc-num:30px;          /* 22.5pt contents numeral */
+  --fs-dm-toc-item:21px;         /* 15.75pt contents item */
+  --fs-dm-lead:19px;             /* 14.25pt row title, takeaway band */
+  --fs-dm-lede:18px;             /* 13.5pt chapter bullet, table row title */
+  --fs-dm-strong:17px;           /* 12.75pt emphasised cell */
+  --fs-dm-body:16px;             /* 12pt  body */
+  --fs-dm-body-sm:15px;          /* 11.25pt dense body, chip */
+  --fs-dm-caption:14px;          /* 10.5pt caption, eyebrow, footnote */
+  --fs-dm-label:13px;            /* 9.75pt table column label */
+  --fs-dm-label-sm:12px;         /* 9pt   smallest label */
+  --fs-dm-page:11px;             /* 8.25pt page counter */
+
+  --lh-dm-title:1.15; /* @kind font */
+  --lh-dm-body:1.55; /* @kind font */
+}

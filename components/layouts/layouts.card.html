@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Slide layouts" subtitle="Cover · Section · Two/Three column · Contents · Watermark · Gradient · End" -->
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>*{box-sizing:border-box}body{margin:0;font-family:var(--font-en);background:#e9e9e9}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px}.cell{position:relative;overflow:hidden;aspect-ratio:16/9;background:#fff;outline:1px solid rgba(0,0,0,.12)}.cell>div{transform-origin:top left}.cap{font-size:9px;color:#555;padding:3px 0 0}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+const N = window.MilliGroupDesignSystem_fda590;
+const B='../../assets/logo';
+const Thumb = ({label, children}) => {
+  const ref = React.useRef(null);
+  const [s,setS] = React.useState(.13);
+  React.useEffect(()=>{ if(ref.current) setS(ref.current.clientWidth/1280); },[]);
+  return <div><div className="cell" ref={ref}><div style={{transform:'scale('+s+')'}}>{children}</div></div><div className="cap">{label}</div></div>;
+};
+const items = [
+  ['CoverSlide', <N.CoverSlide title="Annual Report 2026" description="Group performance and outlook" logoBase={B} />],
+  ['TocSlide', <N.TocSlide heading="Contents" items={['Overview','Market','Performance','Operations','Outlook','Appendix']} />],
+  ['SectionSlide (white)', <N.SectionSlide number="01" title="Market" />],
+  ['SectionSlide (black)', <N.SectionSlide number="02" title="Performance" surface="black" />],
+  ['TwoColumnSlide', <N.TwoColumnSlide title="Where the growth came from" page={4} total={18} label="Annual Report 2026" columns={[{head:'Retail channel',body:<N.BulletList items={['Up 12% year on year','Two new partners']} />},{head:'Wholesale',body:<N.BulletList items={['Flat volume, better mix','Margin held at 31%']} />}]} />],
+  ['ThreeColumnSlide', <N.ThreeColumnSlide title="Three bets for 2026" page={5} total={18} columns={[{head:'Retail',body:<N.BulletList items={['Store refresh']} />},{head:'Digital',body:<N.BulletList items={['Owned channel']} />},{head:'Export',body:<N.BulletList items={['Two new markets']} />}]} />],
+  ['WatermarkSlide', <N.WatermarkSlide title="Revenue by channel" chapter="Performance" page={7} total={18}><div style={{fontSize:'var(--fs-body-lg)',color:'var(--text-muted)'}}>Full-width area for tables, charts and imagery.</div></N.WatermarkSlide>],
+  ['GradientSlide', <N.GradientSlide title="One number worth remembering" chapter="Outlook" page={11} total={18}><div style={{fontSize:120,fontWeight:'var(--fw-black)',lineHeight:1}}>31%</div></N.GradientSlide>],
+  ['EndSlide', <N.EndSlide logoBase={B} />],
+];
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div className="grid">{items.map(([l,el],i)=><Thumb key={i} label={l}>{el}</Thumb>)}</div>
+);
+</script>

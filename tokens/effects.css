@@ -1,0 +1,17 @@
+:root{
+  /* The template is flat: no drop shadows anywhere, and only one rounded shape
+     (the section-slide accent bar, a roundRect at PowerPoint's default adjust). */
+  --radius-none:0px;
+  --radius-bar:2px;
+  --radius-pill:999px;
+  --shadow-none:none;
+
+  --dot-size:18px;            /* the mango bullet dot beside every column head */
+  --section-bar-w:12px;
+  --section-bar-h:89px;
+  --hairline:1px;
+
+  --ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:200ms; /* @kind other */
+}

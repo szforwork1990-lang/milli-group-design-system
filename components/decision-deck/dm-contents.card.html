@@ -1,0 +1,21 @@
+<!-- @dsCard group="Decision deck" viewport="1280x720" name="Contents" subtitle="DeckContents — three bands: the answer, the evidence, the plan" -->
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<div id="root"></div>
+<style>*{box-sizing:border-box}body{margin:0;background:#d9d9d9}</style>
+<script type="text/babel">
+const { DeckContents } = window.MilliGroupDesignSystem_fda590;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <DeckContents
+    dir="rtl" title="فهرست مطالب" subtitle="ساختار سند تصمیم · ده فصل"
+    bands={[
+      { label:'پاسخ', range:'۰۱ — ۰۲', note:'توصیه و فضای گزینه‌ها، پیش از استدلال.', items:[{number:'۰۱',title:'خلاصه مدیریتی'},{number:'۰۲',title:'سؤال تصمیم و گزینه‌ها'}] },
+      { label:'شواهد', range:'۰۳ — ۰۵', note:'آنچه از بازار، رقیب و مقررات به دست می‌آوریم.', items:[{number:'۰۳',title:'بازار و کاربر'},{number:'۰۴',title:'رقابت و مزیت'},{number:'۰۵',title:'محیط مقرراتی'}] },
+      { label:'طرح', range:'۰۶ — ۱۰', note:'از استراتژی و اعداد تا آنچه امروز تصویب می‌شود.', items:[{number:'۰۶',title:'توصیه و استراتژی ورود'},{number:'۰۷',title:'اندازه بازار و مالی'},{number:'۰۸',title:'ریسک‌ها و شرط ابطال'},{number:'۰۹',title:'نقشه راه و سازمان'},{number:'۱۰',title:'بسته تصمیم'}] },
+    ]}
+  />
+);
+</script>

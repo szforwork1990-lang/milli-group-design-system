@@ -1,0 +1,31 @@
+:root{
+  /* Slide canvas */
+  --slide-w:1280px;
+  --slide-h:720px;
+
+  /* Safe area, measured off the .pptx placeholders */
+  --slide-pad-x:64px;
+  --slide-pad-x-wide:104px;   /* cover + section slides */
+  --title-y:52px;
+  --title-h:82px;
+  --content-y:219px;
+  --content-h:429px;
+  --footer-y:671px;
+  --footer-pad-x:48px;
+
+  /* Column grids */
+  --col2-w:552px;
+  --col2-gap:48px;
+  --col3-w:370px;
+  --col3-gap:21px;
+
+  /* Generic scale */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:48px;
+  --space-8:64px;
+}

@@ -1,0 +1,41 @@
+:root{
+  /* Core — from the brand guidelines and the PowerPoint theme */
+  --milli-black:#000000;
+  --milli-white:#FFFFFF;
+  --milli-mango:#FDB913;           /* accent4 in the .pptx theme; the colour in the logo artwork */
+  --milli-mango-guide:#FFBE00;     /* the value printed in the guideline deck — see readme.md */
+  --milli-mango-dark:#B78206;      /* accent4 lumMod 67% — dot gradient shadow */
+  --milli-mango-light:#FED974;     /* accent4 lumMod 60% / lumOff 40% — dot gradient highlight */
+
+  /* Theme accents */
+  --milli-blue:#0B23B5;            /* accent1 */
+  --milli-navy:#06156A;            /* accent2 / accent3 */
+  --milli-navy-ink:#061469;        /* literal navy used on section-slide numerals */
+
+  /* Neutrals */
+  --milli-ink-75:#404040;          /* tx1 lumMod 75% — footer wordmark, muted chrome */
+  --milli-gray-panel:#E7E6E6;      /* lt2 */
+  --milli-slate:#44546A;           /* dk2 */
+
+  /* Semantic / state */
+  --milli-success:#00CC66;         /* accent5 */
+  --milli-alert:#FF5050;           /* accent6 */
+  --milli-link:#0563C1;
+  --milli-link-visited:#954F72;
+
+  /* Aliases */
+  --surface-dark:var(--milli-black);
+  --surface-light:var(--milli-white);
+  --surface-panel:var(--milli-gray-panel);
+  --text-primary:var(--milli-black);
+  --text-on-dark:var(--milli-white);
+  --text-muted:var(--milli-ink-75);
+  --text-accent:var(--milli-mango);
+  --accent:var(--milli-mango);
+  --rule-on-dark:rgba(255,255,255,.24);
+  --rule-on-light:rgba(0,0,0,.14);
+
+  /* Signature fills */
+  --gradient-mango-dot:linear-gradient(180deg,var(--milli-mango-light) 0%,#FDBB19 48%,var(--milli-mango-dark) 100%); /* @kind color */
+  --gradient-mango-wash:linear-gradient(45deg,rgba(253,185,19,.46) 0%,rgba(255,255,255,.29) 21%); /* @kind color */
+}

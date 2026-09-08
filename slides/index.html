@@ -1,0 +1,68 @@
+<!-- @dsCard group="Slides" viewport="1280x800" name="Full deck — click through" subtitle="Ten slides in template order; arrow keys or click to advance" -->
+<!doctype html><meta charset="utf-8"><title>Milli Group deck</title><link rel="stylesheet" href="../styles.css">
+<style>*{box-sizing:border-box}body{margin:0;background:#d9d9d9;font-family:var(--font-en);display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 0}
+.stage{width:1280px;height:720px;position:relative;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.14)}
+.bar{display:flex;align-items:center;gap:10px;font-size:12px;color:#333}
+.bar button{font:inherit;font-family:var(--font-en);padding:5px 12px;border:1px solid rgba(0,0,0,.25);background:#fff;cursor:pointer}
+.bar button:hover{background:var(--milli-mango);border-color:var(--milli-mango)}
+.dots{display:flex;gap:5px}.dot{width:8px;height:8px;border-radius:999px;background:rgba(0,0,0,.22);cursor:pointer}.dot.on{background:var(--milli-mango)}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+const N = window.MilliGroupDesignSystem_fda590;
+const B = '../assets/logo';
+const LABEL = 'Annual Report 2026';
+const bullets = (a) => <N.BulletList items={a} />;
+const SLIDES = [
+  <N.CoverSlide title="Annual Report 2026" description="Group performance, operations and outlook" logoBase={B} />,
+  <N.TocSlide heading="Contents" items={['Overview','Market','Performance','Operations','People','Outlook','Risks','Appendix']} />,
+  <N.SectionSlide number="01" label="Sec" title="Market" />,
+  <N.TwoColumnSlide title="Where the growth came from" page={4} total={10} label={LABEL} columns={[
+    { head:'Retail channel', body:bullets(['Revenue up 12% year on year','Two new distribution partners signed','Same-store volume up 4%','Margin held at 31% despite input costs']) },
+    { head:'Wholesale', body:bullets(['Volume flat, mix improved','Top ten accounts renewed','Terms standardised across regions']) }]} />,
+  <N.ThreeColumnSlide title="Three bets for 2026" page={5} total={10} label={LABEL} columns={[
+    { head:'Retail', body:bullets(['Refresh 40 stores','Single price architecture']) },
+    { head:'Digital', body:bullets(['Owned channel to 18% of revenue','One customer record']) },
+    { head:'Export', body:bullets(['Enter two adjacent markets','Local distribution partners']) }]} />,
+  <N.SectionSlide number="02" label="Sec" title="Performance" surface="black" />,
+  <N.WatermarkSlide title="Revenue by channel" chapter="Performance" page={7} total={10} label={LABEL}>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:24,marginTop:40}}>
+      {[['Retail','48%'],['Wholesale','29%'],['Export','15%'],['Other','8%']].map(([k,v])=>(
+        <div key={k} style={{borderTop:'2px solid var(--milli-black)',paddingTop:16}}>
+          <div style={{fontSize:64,fontWeight:'var(--fw-black)',lineHeight:1}}>{v}</div>
+          <div style={{marginTop:10,fontSize:'var(--fs-body-lg)',color:'var(--text-muted)'}}>{k}</div>
+        </div>))}
+    </div>
+  </N.WatermarkSlide>,
+  <N.GradientSlide title="One number worth remembering" chapter="Outlook" page={8} total={10} label={LABEL}>
+    <div style={{marginTop:60}}>
+      <div style={{fontSize:180,fontWeight:'var(--fw-black)',lineHeight:.85,letterSpacing:'-.03em'}}>31%</div>
+      <div style={{marginTop:24,fontSize:'var(--fs-body-lg)',maxWidth:620,color:'var(--text-muted)'}}>Gross margin, held flat through a year of rising input costs.</div>
+    </div>
+  </N.GradientSlide>,
+  <N.TwoColumnSlide title="What we are watching" page={9} total={10} label={LABEL} columns={[
+    { head:'Risks', body:bullets(['Input cost volatility','Concentration in top ten accounts']) },
+    { head:'Mitigations', body:bullets(['Forward cover extended to nine months','Account base widened in two regions']) }]} />,
+  <N.EndSlide text="Thank You" logoBase={B} />,
+];
+function Deck(){
+  const [i,setI] = React.useState(0);
+  React.useEffect(()=>{
+    const k = e => { if(e.key==='ArrowRight'||e.key===' ') setI(v=>Math.min(v+1,SLIDES.length-1)); if(e.key==='ArrowLeft') setI(v=>Math.max(v-1,0)); };
+    window.addEventListener('keydown',k); return ()=>window.removeEventListener('keydown',k);
+  },[]);
+  return (<>
+    <div className="stage" data-screen-label={String(i+1).padStart(2,'0')} onClick={()=>setI(v=>(v+1)%SLIDES.length)}>{SLIDES[i]}</div>
+    <div className="bar">
+      <button onClick={()=>setI(v=>Math.max(v-1,0))}>Prev</button>
+      <div className="dots">{SLIDES.map((_,n)=><span key={n} className={'dot'+(n===i?' on':'')} onClick={()=>setI(n)} />)}</div>
+      <button onClick={()=>setI(v=>Math.min(v+1,SLIDES.length-1))}>Next</button>
+      <span>{i+1} / {SLIDES.length}</span>
+    </div>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Deck />);
+</script>

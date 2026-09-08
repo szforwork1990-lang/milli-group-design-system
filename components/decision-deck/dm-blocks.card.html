@@ -1,0 +1,68 @@
+<!-- @dsCard group="Decision deck" viewport="1180x760" name="Content blocks" subtitle="RowTable · RowBadge · DotScale · ChipRow · StatBlock · FunnelBars · Takeaway" -->
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<div id="root"></div>
+<style>*{box-sizing:border-box}body{margin:0;background:#fff;font-family:var(--font-fa-body);direction:rtl}.w{padding:26px 32px;display:grid;gap:26px}.lbl{font-family:var(--font-en);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--milli-ink-58);margin-bottom:10px;direction:ltr;text-align:left}</style>
+<script type="text/babel">
+const { RowTable, RowBadge, DotScale, ChipRow, StatBlock, FunnelBars, Takeaway, Diamond } = window.MilliGroupDesignSystem_fda590;
+const cell = (t) => <span style={{fontWeight:'var(--fw-bold)',fontSize:'var(--fs-dm-strong)',color:'var(--milli-black)'}}>{t}</span>;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div className="w">
+    <div>
+      <div className="lbl">RowTable + RowBadge — striped rows, gold recommendation</div>
+      <RowTable dir="rtl" highlight={1} rowHeight={64}
+        columns={[{label:'محور اثر',width:260},{label:'جهت',width:70,align:'center'},{label:'سنجه'},{label:'افق',width:120,align:'center'}]}
+        rows={[
+          [cell('پذیرش میلی به‌عنوان ابزار پرداخت'), <RowBadge size="md">+</RowBadge>, 'افزایش پذیرش میلی به علت تنوع بخشی به دارایی.', 'پس از ۱۲ ماه'],
+          [cell('تعداد کاربران'), <RowBadge size="md">+</RowBadge>, '۲۵۰ هزار کاربر فعال ماهانه در ماه ۳۶', '۳۶ ماه'],
+          [cell('مالی'), <RowBadge size="md">+</RowBadge>, 'درآمد ۴٫۴۳M$ سال سوم · NPV افق ۱٫۳۸M$', '۳۶ ماه'],
+        ]} />
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32}}>
+      <div>
+        <div className="lbl">Diamond — the deck's one shape, at four sizes</div>
+        <div style={{display:'flex',flexDirection:'row-reverse',alignItems:'center',gap:34,paddingBottom:14}}>
+          <Diamond size={22} /><Diamond size={34} labelStyle={{fontFamily:'var(--font-fa-head)',fontWeight:900,fontSize:16}}>۱</Diamond><Diamond size={52} labelStyle={{fontFamily:'var(--font-fa-head)',fontWeight:900,fontSize:24}}>ب</Diamond><Diamond size={20} fill="var(--milli-black)" />
+        </div>
+        <div className="lbl" style={{marginTop:14}}>DotScale — bars, and the four-step diamond weight</div>
+        <div style={{display:'grid',gap:14}}>
+          <div style={{display:'flex',flexDirection:'row-reverse',alignItems:'center',gap:14}}><span style={{width:78,fontSize:'var(--fs-dm-caption)'}}>بالا</span><DotScale value={3} /></div>
+          <div style={{display:'flex',flexDirection:'row-reverse',alignItems:'center',gap:14}}><span style={{width:78,fontSize:'var(--fs-dm-caption)'}}>متوسط</span><DotScale value={2} tone="muted" /></div>
+          <div style={{display:'flex',flexDirection:'row-reverse',alignItems:'center',gap:14}}><span style={{width:78,fontSize:'var(--fs-dm-caption)'}}>وزن</span><DotScale shape="diamond" max={4} value={4} /></div>
+        </div>
+      </div>
+      <div>
+        <div className="lbl">ChipRow — the option space, one dimension</div>
+        <ChipRow dir="rtl" chips={[{label:'سواپ با قیمت اعلامی',tone:'chosen'},{label:'کاستودی نزد شریک',tone:'viable'},'اردربوک',{label:'OTC مذاکره‌ای',tone:'rejected'}]} />
+      </div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,alignItems:'start'}}>
+      <div>
+        <div className="lbl">StatBlock</div>
+        <div style={{display:'grid',gap:18}}>
+          <StatBlock dir="rtl" value="۲۰۰ M$" caption="حجم اعلامی معاملات بازار در روز" size={92} />
+          <StatBlock dir="rtl" tone="gold" value="۱۷ M$" caption="ورود و خروج ریالی در روز — تنها ۸٪ از حجم." size={92} />
+        </div>
+      </div>
+      <div>
+        <div className="lbl">FunnelBars</div>
+        <FunnelBars dir="rtl" steps={[
+          {label:'کل جامعه‌ی ۱۸ تا ۶۵ ساله',meta:'۱۰۰٪',value:'۵۸ میلیون',width:100,tone:'black'},
+          {label:'آشنا با رمزارز',meta:'۹۰٪ از کل جامعه',value:'۵۲ میلیون',width:88,tone:'black'},
+          {label:'هرگز نخریده‌اند',meta:'۶۴٪ از کل جامعه',flag:'هدف اصلی',value:'۳۷ میلیون',width:63,tone:'gold'},
+        ]} />
+      </div>
+    </div>
+    <div>
+      <div className="lbl">Takeaway — black with gold accent, and the quieter grey band</div>
+      <div style={{display:'grid',gap:12}}>
+        <Takeaway dir="rtl" accent>راه ما از ارائه محصول آسان به کاربران فعلی می‌گذرد.</Takeaway>
+        <Takeaway dir="rtl" tone="grey">تا انجام پیمایش تمایل کاربر و پایلوت، خروجی مدل مالی صرفا یک چارچوب تصمیم است، نه یک پیش‌بینی.</Takeaway>
+      </div>
+    </div>
+  </div>
+);
+</script>

@@ -1,0 +1,28 @@
+/* Milli Group webfonts — self-hosted from the binaries the brand supplied.
+   Montserrat: Latin, 9 weights x 2 styles. Yekan Bakh VF: Farsi, variable 100-900. */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url('../assets/fonts/Montserrat-Thin.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url('../assets/fonts/Montserrat-ThinItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url('../assets/fonts/Montserrat-ExtraLight.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url('../assets/fonts/Montserrat-ExtraLightItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url('../assets/fonts/Montserrat-Light.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url('../assets/fonts/Montserrat-LightItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url('../assets/fonts/Montserrat-Regular.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url('../assets/fonts/Montserrat-Italic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url('../assets/fonts/Montserrat-Medium.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url('../assets/fonts/Montserrat-MediumItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url('../assets/fonts/Montserrat-SemiBold.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url('../assets/fonts/Montserrat-SemiBoldItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url('../assets/fonts/Montserrat-Bold.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:700;font-display:swap;src:url('../assets/fonts/Montserrat-BoldItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url('../assets/fonts/Montserrat-ExtraBold.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:800;font-display:swap;src:url('../assets/fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url('../assets/fonts/Montserrat-Black.ttf') format('truetype')}
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:900;font-display:swap;src:url('../assets/fonts/Montserrat-BlackItalic.ttf') format('truetype')}
+@font-face{font-family:'Yekan Bakh VF';font-style:normal;font-weight:100 900;font-display:swap;src:url('../assets/fonts/YekanBakh-VF.ttf') format('truetype-variations'),url('../assets/fonts/YekanBakh-VF.ttf') format('truetype')}
+
+/* PowerPoint resolves fonts by family NAME. Farsi decks must name 'Yekan Bakh VF Black'
+   for headings and 'B Yekan' for body (see readme.md and CLAUDE.md), so both names are
+   registered here against the same variable binary — the preview then renders exactly
+   what PowerPoint will resolve on the user's machine. */
+@font-face{font-family:'Yekan Bakh VF Black';font-style:normal;font-weight:900;font-display:swap;src:url('../assets/fonts/YekanBakh-VF.ttf') format('truetype-variations'),url('../assets/fonts/YekanBakh-VF.ttf') format('truetype')}
+@font-face{font-family:'B Yekan';font-style:normal;font-weight:100 900;font-display:swap;src:url('../assets/fonts/YekanBakh-VF.ttf') format('truetype-variations'),url('../assets/fonts/YekanBakh-VF.ttf') format('truetype')}
