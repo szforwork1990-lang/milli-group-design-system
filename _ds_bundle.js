@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"MilliGroupDesignSystem_fda590","components":[{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"ChapterDots","sourcePath":"components/decision-deck/ChapterDots.jsx"},{"name":"ChapterOpener","sourcePath":"components/decision-deck/ChapterOpener.jsx"},{"name":"ChipRow","sourcePath":"components/decision-deck/ChipRow.jsx"},{"name":"ContentSlide","sourcePath":"components/decision-deck/ContentSlide.jsx"},{"name":"DeckContents","sourcePath":"components/decision-deck/DeckContents.jsx"},{"name":"DeckCover","sourcePath":"components/decision-deck/DeckCover.jsx"},{"name":"DeckFooter","sourcePath":"components/decision-deck/DeckFooter.jsx"},{"name":"Diamond","sourcePath":"components/decision-deck/Diamond.jsx"},{"name":"DotScale","sourcePath":"components/decision-deck/DotScale.jsx"},{"name":"FunnelBars","sourcePath":"components/decision-deck/FunnelBars.jsx"},{"name":"NumberedPoint","sourcePath":"components/decision-deck/NumberedPoint.jsx"},{"name":"RowBadge","sourcePath":"components/decision-deck/RowBadge.jsx"},{"name":"RowTable","sourcePath":"components/decision-deck/RowTable.jsx"},{"name":"StatBlock","sourcePath":"components/decision-deck/StatBlock.jsx"},{"name":"Takeaway","sourcePath":"components/decision-deck/Takeaway.jsx"},{"name":"ThanksSlide","sourcePath":"components/decision-deck/ThanksSlide.jsx"},{"name":"CoverSlide","sourcePath":"components/layouts/CoverSlide.jsx"},{"name":"EndSlide","sourcePath":"components/layouts/EndSlide.jsx"},{"name":"GradientSlide","sourcePath":"components/layouts/GradientSlide.jsx"},{"name":"SectionSlide","sourcePath":"components/layouts/SectionSlide.jsx"},{"name":"ThreeColumnSlide","sourcePath":"components/layouts/ThreeColumnSlide.jsx"},{"name":"TocSlide","sourcePath":"components/layouts/TocSlide.jsx"},{"name":"TwoColumnSlide","sourcePath":"components/layouts/TwoColumnSlide.jsx"},{"name":"WatermarkSlide","sourcePath":"components/layouts/WatermarkSlide.jsx"},{"name":"BulletList","sourcePath":"components/slide-chrome/BulletList.jsx"},{"name":"ColumnHead","sourcePath":"components/slide-chrome/ColumnHead.jsx"},{"name":"SectionBar","sourcePath":"components/slide-chrome/SectionBar.jsx"},{"name":"SlideFooter","sourcePath":"components/slide-chrome/SlideFooter.jsx"},{"name":"SlideFrame","sourcePath":"components/slide-chrome/SlideFrame.jsx"},{"name":"SlideTitle","sourcePath":"components/slide-chrome/SlideTitle.jsx"}],"sourceHashes":{"components/brand/Logo.jsx":"ca06bc75e17d","components/brand/Wordmark.jsx":"5ceecc92eceb","components/decision-deck/ChapterDots.jsx":"272019b365dc","components/decision-deck/ChapterOpener.jsx":"c11878d612e3","components/decision-deck/ChipRow.jsx":"e370a19f75fd","components/decision-deck/ContentSlide.jsx":"f32047bcb79d","components/decision-deck/DeckContents.jsx":"4ac0094b50a4","components/decision-deck/DeckCover.jsx":"e691fb714aa9","components/decision-deck/DeckFooter.jsx":"336071b85995","components/decision-deck/Diamond.jsx":"105d42264e87","components/decision-deck/DotScale.jsx":"f6411a917b97","components/decision-deck/FunnelBars.jsx":"7084b6fa9f2f","components/decision-deck/NumberedPoint.jsx":"6330bca7af9b","components/decision-deck/RowBadge.jsx":"e299f408cb76","components/decision-deck/RowTable.jsx":"499026c1b9b6","components/decision-deck/StatBlock.jsx":"504961407f4d","components/decision-deck/Takeaway.jsx":"ad8c47faab0f","components/decision-deck/ThanksSlide.jsx":"a98b3ab5b453","components/layouts/CoverSlide.jsx":"b184592bca07","components/layouts/EndSlide.jsx":"955becdf5e1a","components/layouts/GradientSlide.jsx":"546118f3ff74","components/layouts/SectionSlide.jsx":"3acbd9f791b4","components/layouts/ThreeColumnSlide.jsx":"040edb00b64f","components/layouts/TocSlide.jsx":"a04c78d07819","components/layouts/TwoColumnSlide.jsx":"d3bcb7142361","components/layouts/WatermarkSlide.jsx":"890b1dc77bc9","components/slide-chrome/BulletList.jsx":"a217970798e7","components/slide-chrome/ColumnHead.jsx":"1aae632e713a","components/slide-chrome/SectionBar.jsx":"b101cd39c6e0","components/slide-chrome/SlideFooter.jsx":"a87cbd4a8bb0","components/slide-chrome/SlideFrame.jsx":"152de03f546f","components/slide-chrome/SlideTitle.jsx":"76a2a3d6bd10"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"MilliGroupDesignSystem_fda590","components":[{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"ChapterDots","sourcePath":"components/decision-deck/ChapterDots.jsx"},{"name":"ChapterOpener","sourcePath":"components/decision-deck/ChapterOpener.jsx"},{"name":"ChipRow","sourcePath":"components/decision-deck/ChipRow.jsx"},{"name":"ContentSlide","sourcePath":"components/decision-deck/ContentSlide.jsx"},{"name":"DeckContents","sourcePath":"components/decision-deck/DeckContents.jsx"},{"name":"DeckCover","sourcePath":"components/decision-deck/DeckCover.jsx"},{"name":"DeckFooter","sourcePath":"components/decision-deck/DeckFooter.jsx"},{"name":"Diamond","sourcePath":"components/decision-deck/Diamond.jsx"},{"name":"DotScale","sourcePath":"components/decision-deck/DotScale.jsx"},{"name":"FunnelBars","sourcePath":"components/decision-deck/FunnelBars.jsx"},{"name":"NumberedPoint","sourcePath":"components/decision-deck/NumberedPoint.jsx"},{"name":"RowBadge","sourcePath":"components/decision-deck/RowBadge.jsx"},{"name":"RowTable","sourcePath":"components/decision-deck/RowTable.jsx"},{"name":"StatBlock","sourcePath":"components/decision-deck/StatBlock.jsx"},{"name":"Takeaway","sourcePath":"components/decision-deck/Takeaway.jsx"},{"name":"ThanksSlide","sourcePath":"components/decision-deck/ThanksSlide.jsx"},{"name":"CoverSlide","sourcePath":"components/layouts/CoverSlide.jsx"},{"name":"EndSlide","sourcePath":"components/layouts/EndSlide.jsx"},{"name":"GradientSlide","sourcePath":"components/layouts/GradientSlide.jsx"},{"name":"SectionSlide","sourcePath":"components/layouts/SectionSlide.jsx"},{"name":"ThreeColumnSlide","sourcePath":"components/layouts/ThreeColumnSlide.jsx"},{"name":"TocSlide","sourcePath":"components/layouts/TocSlide.jsx"},{"name":"TwoColumnSlide","sourcePath":"components/layouts/TwoColumnSlide.jsx"},{"name":"WatermarkSlide","sourcePath":"components/layouts/WatermarkSlide.jsx"},{"name":"BulletList","sourcePath":"components/slide-chrome/BulletList.jsx"},{"name":"ColumnHead","sourcePath":"components/slide-chrome/ColumnHead.jsx"},{"name":"SectionBar","sourcePath":"components/slide-chrome/SectionBar.jsx"},{"name":"SlideFooter","sourcePath":"components/slide-chrome/SlideFooter.jsx"},{"name":"SlideFrame","sourcePath":"components/slide-chrome/SlideFrame.jsx"},{"name":"SlideTitle","sourcePath":"components/slide-chrome/SlideTitle.jsx"}],"sourceHashes":{"components/brand/Logo.jsx":"ca06bc75e17d","components/brand/Wordmark.jsx":"5ceecc92eceb","components/decision-deck/ChapterDots.jsx":"40c36966d17f","components/decision-deck/ChapterOpener.jsx":"c11878d612e3","components/decision-deck/ChipRow.jsx":"e370a19f75fd","components/decision-deck/ContentSlide.jsx":"39003889da0d","components/decision-deck/DeckContents.jsx":"4ac0094b50a4","components/decision-deck/DeckCover.jsx":"e691fb714aa9","components/decision-deck/DeckFooter.jsx":"336071b85995","components/decision-deck/Diamond.jsx":"105d42264e87","components/decision-deck/DotScale.jsx":"f6411a917b97","components/decision-deck/FunnelBars.jsx":"7084b6fa9f2f","components/decision-deck/NumberedPoint.jsx":"6330bca7af9b","components/decision-deck/RowBadge.jsx":"e299f408cb76","components/decision-deck/RowTable.jsx":"499026c1b9b6","components/decision-deck/StatBlock.jsx":"504961407f4d","components/decision-deck/Takeaway.jsx":"ad8c47faab0f","components/decision-deck/ThanksSlide.jsx":"a98b3ab5b453","components/layouts/CoverSlide.jsx":"b184592bca07","components/layouts/EndSlide.jsx":"955becdf5e1a","components/layouts/GradientSlide.jsx":"546118f3ff74","components/layouts/SectionSlide.jsx":"3acbd9f791b4","components/layouts/ThreeColumnSlide.jsx":"040edb00b64f","components/layouts/TocSlide.jsx":"a04c78d07819","components/layouts/TwoColumnSlide.jsx":"d3bcb7142361","components/layouts/WatermarkSlide.jsx":"890b1dc77bc9","components/slide-chrome/BulletList.jsx":"a217970798e7","components/slide-chrome/ColumnHead.jsx":"1aae632e713a","components/slide-chrome/SectionBar.jsx":"b101cd39c6e0","components/slide-chrome/SlideFooter.jsx":"a87cbd4a8bb0","components/slide-chrome/SlideFrame.jsx":"152de03f546f","components/slide-chrome/SlideTitle.jsx":"76a2a3d6bd10"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -80,10 +80,11 @@ Object.assign(__ds_scope, { Wordmark });
 // components/decision-deck/ChapterDots.jsx
 try { (() => {
 /**
- * Position within a chapter: one rounded diamond per slide, gold up to the current one.
- * The deck's squares are all 45deg-rotated squares (rot="2700000" in the source), so the
- * shape is a rounded diamond and the layout box stays the unrotated side length.
- * RTL decks read right to left, so the first slide is the rightmost diamond.
+ * Position within a chapter: one rounded diamond per slide. Slides already passed are pale
+ * mango, the current slide is full mango, slides still to come are white with a hairline.
+ * The deck's squares all carry rot="2700000" in the source, so the shape is a rounded
+ * diamond and the layout box stays the unrotated side length. RTL decks read right to
+ * left, so the first slide is the rightmost diamond.
  */
 function ChapterDots({
   total = 3,
@@ -92,7 +93,7 @@ function ChapterDots({
   tone = 'light',
   style
 }) {
-  const rest = tone === 'dark' ? 'rgba(255,255,255,.28)' : 'var(--milli-black)';
+  const ring = tone === 'dark' ? 'rgba(255,255,255,.55)' : 'rgba(0,0,0,.30)';
   return /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
@@ -102,16 +103,21 @@ function ChapterDots({
     }
   }, Array.from({
     length: total
-  }, (_, i) => /*#__PURE__*/React.createElement("span", {
-    key: i,
-    style: {
-      width: size,
-      height: size,
-      borderRadius: Math.round(size * 0.28),
-      transform: 'rotate(45deg)',
-      background: i < active ? 'var(--milli-mango)' : rest
-    }
-  })));
+  }, (_, i) => {
+    const state = i < active - 1 ? 'past' : i === active - 1 ? 'current' : 'ahead';
+    return /*#__PURE__*/React.createElement("span", {
+      key: i,
+      style: {
+        width: size,
+        height: size,
+        flex: '0 0 auto',
+        borderRadius: Math.round(size * 0.28),
+        transform: 'rotate(45deg)',
+        background: state === 'current' ? 'var(--milli-mango)' : state === 'past' ? 'var(--milli-mango-light)' : 'var(--milli-white)',
+        boxShadow: state === 'ahead' ? `inset 0 0 0 1px ${ring}` : 'none'
+      }
+    });
+  }));
 }
 Object.assign(__ds_scope, { ChapterDots });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/decision-deck/ChapterDots.jsx", error: String((e && e.message) || e) }); }
@@ -549,7 +555,7 @@ function ChapterDotsSlot({
   tone,
   rtl
 }) {
-  const rest = tone === 'dark' ? 'rgba(255,255,255,.28)' : 'var(--milli-black)';
+  const ring = tone === 'dark' ? 'rgba(255,255,255,.55)' : 'rgba(0,0,0,.30)';
   const total = dots.total || 3,
     active = dots.active || 1;
   return /*#__PURE__*/React.createElement("div", {
@@ -563,16 +569,21 @@ function ChapterDotsSlot({
     }
   }, Array.from({
     length: total
-  }, (_, i) => /*#__PURE__*/React.createElement("span", {
-    key: i,
-    style: {
-      width: 22,
-      height: 22,
-      borderRadius: 6,
-      transform: 'rotate(45deg)',
-      background: i < active ? 'var(--milli-mango)' : rest
-    }
-  })));
+  }, (_, i) => {
+    const state = i < active - 1 ? 'past' : i === active - 1 ? 'current' : 'ahead';
+    return /*#__PURE__*/React.createElement("span", {
+      key: i,
+      style: {
+        width: 22,
+        height: 22,
+        flex: '0 0 auto',
+        borderRadius: 6,
+        transform: 'rotate(45deg)',
+        background: state === 'current' ? 'var(--milli-mango)' : state === 'past' ? 'var(--milli-mango-light)' : 'var(--milli-white)',
+        boxShadow: state === 'ahead' ? `inset 0 0 0 1px ${ring}` : 'none'
+      }
+    });
+  }));
 }
 function DeckFooterSlot({
   label,

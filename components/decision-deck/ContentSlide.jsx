@@ -67,13 +67,23 @@ export function ContentSlide({
 /* The dots sit on the edge OPPOSITE the eyebrow — in the source deck the eyebrow is on
    the reading edge and the dots on the far one, which is what leaves the title its inset. */
 function ChapterDotsSlot({ dots, tone, rtl }) {
-  const rest = tone === 'dark' ? 'rgba(255,255,255,.28)' : 'var(--milli-black)';
+  const ring = tone === 'dark' ? 'rgba(255,255,255,.55)' : 'rgba(0,0,0,.30)';
   const total = dots.total || 3, active = dots.active || 1;
   return (
     <div style={{ position: 'absolute', [rtl ? 'left' : 'right']: 64, top: 54, display: 'flex', flexDirection: rtl ? 'row-reverse' : 'row', gap: 13 }}>
-      {Array.from({ length: total }, (_, i) => (
-        <span key={i} style={{ width: 22, height: 22, borderRadius: 6, transform: 'rotate(45deg)', background: i < active ? 'var(--milli-mango)' : rest }} />
-      ))}
+      {Array.from({ length: total }, (_, i) => {
+        const state = i < active - 1 ? 'past' : i === active - 1 ? 'current' : 'ahead';
+        return (
+          <span
+            key={i}
+            style={{
+              width: 22, height: 22, flex: '0 0 auto', borderRadius: 6, transform: 'rotate(45deg)',
+              background: state === 'current' ? 'var(--milli-mango)' : state === 'past' ? 'var(--milli-mango-light)' : 'var(--milli-white)',
+              boxShadow: state === 'ahead' ? `inset 0 0 0 1px ${ring}` : 'none',
+            }}
+          />
+        );
+      })}
     </div>
   );
 }
